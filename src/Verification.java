@@ -1,28 +1,37 @@
 import java.util.Scanner;
 
 public class Verification {
+    Scanner scanner = new Scanner(System.in);
+    private String name;
+    private String surname;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getSurname() {
+        return surname;
+    }
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     Verification() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите своё имя и фамилию:");
 
-        String name = scanner.nextLine();
-        String surname = scanner.nextLine();
+        name = scanner.nextLine();
+        surname = scanner.nextLine();
 
         Check(name, surname);
     }
 
     void Check(String name, String surname) {
-        if (name.equals("Константин") & surname.equals("Дзюба")) {
-            Out(true);
-        }
-        else {
-            Out(false);
-        }
+        Out(name.equals("Константин") & surname.equals("Дзюба"));
     }
 
     void Out(boolean check) {
-        Scanner scanner = new Scanner(System.in);
-
         if (check) {
             System.out.println("Не врёшь?");
             String choice = scanner.nextLine();

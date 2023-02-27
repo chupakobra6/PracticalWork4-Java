@@ -1,11 +1,20 @@
 import java.util.Scanner;
 
 public class GameLink {
+    Scanner scanner = new Scanner(System.in);
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
     GameLink() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название игры для получения ссылки:");
 
-        String name = scanner.nextLine();
+        name = scanner.nextLine();
         Check(name);
     }
 

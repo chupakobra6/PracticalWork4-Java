@@ -1,11 +1,31 @@
 import java.util.Scanner;
 
 public class MassCalculator {
-    MassCalculator() {
-        Scanner scanner = new Scanner(System.in);
-        double volume = 0;
-        double p = 0;
+    Scanner scanner = new Scanner(System.in);
+    private double volume = 0;
+    private double p = 0;
+    private double mass = 0;
 
+    public double getVolume() {
+        return volume;
+    }
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
+    public double getP() {
+        return p;
+    }
+    public void setP(double p) {
+        this.p = p;
+    }
+    public double getMass() {
+        return mass;
+    }
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
+
+    MassCalculator() {
         System.out.println("Формула массы: V*p - произведение объёма на плотность\n Введите объём (м^3) и плотность (кг/м^3):");
 
         try {
@@ -35,15 +55,13 @@ public class MassCalculator {
     }
 
     String Calculator(double volume, double p) {
-        double kilos = 0;
         try {
-            kilos = volume * p;
+            mass = volume * p;
         }
         catch (Exception ex) {
             System.out.println("Ошибка в вычислениях!");
         }
 
-        return  "Результат: " + kilos;
+        return  "Результат: " + mass;
     }
-
 }
